@@ -1,122 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete My Account — ESS (AGI)</title>
-    <style>
-        body {
-          font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-          background: #F5F7FF;
-          color: #1A1A2E;
-          max-width: 640px;
-          margin: 0 auto;
-          padding: 32px 20px;
-          line-height: 1.6;
-        }
-        h1 { color: #1A237E; font-size: 22px; }
-        .card {
-          background: #fff;
-          border-radius: 16px;
-          padding: 24px;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-          margin-top: 20px;
-        }
-        .warn {
-          background: #FFF3E0;
-          border-left: 4px solid #E65100;
-          padding: 12px 16px;
-          border-radius: 8px;
-          margin: 16px 0;
-          font-size: 14px;
-        }
-        label { display: block; font-weight: 600; margin: 14px 0 6px; font-size: 14px; }
-        input[type=text], input[type=email] {
-          width: 100%;
-          padding: 10px 12px;
-          border: 1px solid #C5CAE9;
-          border-radius: 10px;
-          font-size: 14px;
-          box-sizing: border-box;
-        }
-        button {
-          margin-top: 20px;
-          background: #1A237E;
-          color: #fff;
-          border: none;
-          padding: 12px 20px;
-          border-radius: 10px;
-          font-size: 15px;
-          font-weight: 600;
-          cursor: pointer;
-          width: 100%;
-        }
-        button:hover { opacity: 0.9; }
-        .note { font-size: 13px; color: #5C6BC0; margin-top: 24px; }
-        #status { margin-top: 16px; font-size: 14px; display: none; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete My Account — ESS (AGI)</title>
+<style>
+  body {
+    font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: #F5F7FF;
+    color: #1A1A2E;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 20px;
+    line-height: 1.6;
+  }
+  h1 { color: #1A237E; font-size: 22px; }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-top: 20px;
+  }
+  .warn {
+    background: #FFF3E0;
+    border-left: 4px solid #E65100;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  label { display: block; font-weight: 600; margin: 14px 0 6px; font-size: 14px; }
+  input[type=text], input[type=email] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #C5CAE9;
+    border-radius: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  button {
+    margin-top: 20px;
+    background: #1A237E;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+  }
+  button:hover { opacity: 0.9; }
+  .note { font-size: 13px; color: #5C6BC0; margin-top: 24px; }
+  #status { margin-top: 16px; font-size: 14px; display: none; }
+</style>
 </head>
 <body>
 
 <h1>📱 ESS — Delete My Account</h1>
 
 <div class="card">
-    <p>
-        ESS (Employee Self-Service) is an internal app for Artistic Garment
-        Industries (AGI) employees. If you'd like your ESS app account and
-        associated login data deleted, use the form below or contact us directly.
-    </p>
+  <p>
+    ESS (Employee Self-Service) is the internal mobile app used by Artistic
+    Garment Industries (AGI) employees to access attendance, salary, and
+    leave information. If you would like your ESS app account and associated
+    login data removed, please use the form below.
+  </p>
 
-    <div class="warn">
-        Deleting your account removes your ESS login/registration record and any
-        saved credentials on your device. It does <strong>not</strong> affect
-        your official HR employment record with AGI, which is retained under
-        standard company policy.
-    </div>
+  <div class="warn">
+    Deleting your account removes your ESS login/registration record and any
+    saved credentials on your device. It does <strong>not</strong> affect
+    your official HR employment record with AGI, which is retained under
+    standard company policy.
+  </div>
 
-    <form id="deleteForm" onsubmit="return submitRequest(event)">
-        <label for="cnic">CNIC</label>
-        <input type="text" id="cnic" placeholder="XXXXX-XXXXXXX-X" required>
+  <form id="deleteForm" onsubmit="return submitRequest(event)">
+    <label for="cnic">CNIC</label>
+    <input type="text" id="cnic" placeholder="XXXXX-XXXXXXX-X" required>
 
-        <label for="email">Contact Email or Phone</label>
-        <input type="text" id="email" placeholder="you@example.com or 03XX-XXXXXXX" required>
+    <label for="email">Contact Email or Phone</label>
+    <input type="text" id="email" placeholder="you@example.com or 03XX-XXXXXXX" required>
 
-        <button type="submit">Request Account Deletion</button>
-    </form>
+    <button type="submit">Request Account Deletion</button>
+  </form>
 
-    <div id="status"></div>
+  <div id="status"></div>
 
-    <p class="note">
-        Alternatively, email <strong>ammar.btk2@agi.artisticgarment.com</strong> (replace
-        with your real HR/IT support address) from your registered email or
-        include your CNIC, with the subject "ESS Account Deletion Request".
-        Requests are typically processed within 7 business days.
-    </p>
+  <p class="note">
+    You can also email us directly at <strong>ammar.btk2@agi.artisticgarment.com</strong>
+    from your registered contact, including your CNIC and the subject line
+    "ESS Account Deletion Request." Requests are typically processed within
+    7 business days.
+  </p>
 </div>
 
 <script>
-    // This form does not submit anywhere on its own — it's a static page.
-    // Point ACTION_EMAIL at your real support inbox; this builds a
-    // pre-filled mailto: link so the request reaches you without needing
-    // a backend for this page.
-    const ACTION_EMAIL = "ammar.btk2@agi.artisticgarment.com";
+  // This form does not submit anywhere on its own — it's a static page.
+  // Point ACTION_EMAIL at your real support inbox; this builds a
+  // pre-filled mailto: link so the request reaches you without needing
+  // a backend for this page.
+  const ACTION_EMAIL = "ammar.btk2@agi.artisticgarment.com";
 
-    function submitRequest(e) {
-      e.preventDefault();
-      const cnic = document.getElementById('cnic').value.trim();
-      const contact = document.getElementById('email').value.trim();
-      const subject = encodeURIComponent("ESS Account Deletion Request");
-      const body = encodeURIComponent(
-        "CNIC: " + cnic + "\nContact: " + contact +
-        "\n\nPlease delete my ESS app account and associated login data."
-      );
-      window.location.href = `mailto:${ACTION_EMAIL}?subject=${subject}&body=${body}`;
+  function submitRequest(e) {
+    e.preventDefault();
+    const cnic = document.getElementById('cnic').value.trim();
+    const contact = document.getElementById('email').value.trim();
+    const subject = encodeURIComponent("ESS Account Deletion Request");
+    const body = encodeURIComponent(
+      "CNIC: " + cnic + "\nContact: " + contact +
+      "\n\nPlease delete my ESS app account and associated login data."
+    );
+    window.location.href = `mailto:${ACTION_EMAIL}?subject=${subject}&body=${body}`;
 
-      const status = document.getElementById('status');
-      status.style.display = 'block';
-      status.textContent = "Opening your email app to send the request…";
-      return false;
-    }
+    const status = document.getElementById('status');
+    status.style.display = 'block';
+    status.textContent = "Opening your email app to send the request…";
+    return false;
+  }
 </script>
 
 </body>
