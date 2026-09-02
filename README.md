@@ -1,6 +1,25 @@
-🗑️ Account Deletion (Play Store / App Store requirement)
-Since the app allows account creation (registration), both stores require a way for a user to delete their account without needing the app installed. Two parts:
+Account Deletion (Play Store / App Store Requirement)
 
-In-app: Dashboard → top-right ⋮ menu → "Delete My Account". This permanently deletes the employee's app login/registration record. It does not touch the official HR/payroll employment record, which is managed separately and outside this app's control.
-Web: docs/index.html — a static page hosted via GitHub Pages (Repo → Settings → Pages → Branch main, folder /docs) so a request can be made from any browser, even without the app installed. Before publishing, replace the placeholder support email in docs/index.html (two places) with your real HR/IT contact.
-Put the resulting GitHub Pages URL into Google Play's Data Safety → Data deletion section and Apple's App Privacy section when submitting.
+Since the app allows account creation, both stores require users to be able to delete their account without needing the app installed.
+
+1. In-App Deletion
+
+Path: Dashboard → ⋮ (top-right menu) → Delete My Account
+
+Permanently deletes the employee's app login/registration record.
+Does not affect the official HR/payroll employment record — that is managed separately, outside this app's control.
+2. Web-Based Deletion
+
+File: docs/index.html — a static page hosted via GitHub Pages, so users can request deletion from any browser without the app installed.
+
+Setup:
+
+Repo → Settings → Pages → Branch: main, Folder: /docs
+Before publishing, replace the placeholder support email in docs/index.html (appears in two places) with your real HR/IT contact email.
+
+After publishing:
+
+Copy the GitHub Pages URL.
+Add it to:
+Google Play Console → Data Safety → Data deletion
+Apple App Store Connect → App Privacy
